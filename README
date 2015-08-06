@@ -1,0 +1,35 @@
+INTRODUCTION:
+
+These scripts and accompanying datasets are designed for benchmarking of common
+bioinformatics tools, utilizing GNU-time to gather basic run statistics.
+Tools: velvet, prokka, blast, muscle, hmmer, phyml, snippy, beast
+
+USAGE:
+
+Usage: benchmarker-runner.py [command]
+commands:
+        run n        - runs benchmarks, where optional n specifies the number of runs to perform, with n-1 restarts in between
+        output       - outputs data to output/
+        graph_data   - graphs raw data to output/graphs
+        graph_scores - graphs scores to output/graphs
+        devWipe      - wipes all collected data, scores, and temp files"
+
+RESOURCES USED:
+
+Citations for resources used are given in docs/RESOURCES
+
+REQUIREMENTS:
+
+Python3
+Python3-matplotlib
+GNU-time (/usr/bin/time)
+velvet
+ncbi-blast+
+prokka
+blast
+muscle
+hmmer
+phyml
+snippy
+beast
+

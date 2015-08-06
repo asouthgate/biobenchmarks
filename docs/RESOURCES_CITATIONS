@@ -1,0 +1,96 @@
+The reads are from an unpublished sample of Salmonella enterica serovar Paratyphi B
+
+For the muscle alignment and subsequent phyml tree:
+
+Gene: 16S (EC1_R_21570) Faecalitalea cylindroides T2-87
+Gene: 16S (FPR_R_32440) Faecalibacterium prausnitzii SL3/3
+Gene: 16S (ERE_R_37130) Eubacterium rectale M104/1
+Gene: 16S (GPA_R_36180) Gordonibacter pamelaeae 7-10-1-b
+Gene: 16S (RUM_R_24670) Ruminococcus champanellensis 18P13 = JCM 17042
+Gene: 16S (RTO_R_32970) Ruminococcus torques L2-14
+Gene: 16S (ROI_R_41950) Roseburia intestinalis M50/1
+Gene: 16S (CC1_R_35000) Coprococcus catus GD/7
+Gene: rRNA-16s-1 (rRNA-16s-1) Bacillus anthracis str. Sterne (GCA 000008165.1)
+Gene: 16S rRNA (EBG00000014817) Photorhabdus luminescens subsp. laumondii TTO1
+Gene: 16S rRNA (EBG00000018537) Peptoclostridium difficile R20291
+Gene: 16S rRNA (PBPRA3306) Photobacterium profundum SS9
+Gene: rRNA-16S (SM2011_c02675) Sinorhizobium meliloti 2011
+Gene: rRNA-16S (MCJ_007230) Mycoplasma conjunctivae
+Gene: 16S rRNA (HF1_r02) Mycoplasma haemofelis str. Langford 1
+
+Kanz, C., Aldebert, P., Althorpe, N., Baker, W., Baldwin, A., Bates, K., ... & Apweiler, R. (2005). The EMBL nucleotide sequence database. Nucleic Acids Research, 33(suppl 1), D29-D33.
+
+For the reference genome used by snippy:
+
+>ENA|FQ312003|FQ312003.1 Salmonella enterica subsp. enterica serovar Typhimurium SL1344 complete genome 
+http://www.ebi.ac.uk/ena/data/view/FQ312003.1
+
+Kröger C, Dillon SC, Cameron ADS, et al. The transcriptional landscape and small RNAs of Salmonella enterica serovar Typhimurium. Proceedings of the National Academy of Sciences of the United States of America. 2012;109(20):E1277-E1286. doi:10.1073/pnas.1201061109.
+
+The following tools were utilized as benchmark programs:
+
+BLAST: Altschul, S.F., Gish, W., Miller, W., Myers, E.W. & Lipman, D.J. (1990) "Basic local alignment search tool." J. Mol. Biol. 215:403-410. PubMed
+
+PHYML: Guindon, S., Dufayard, J. F., Lefort, V., Anisimova, M., Hordijk, W., & Gascuel, O. (2010). New algorithms and methods to estimate maximum-likelihood phylogenies: assessing the performance of PhyML 3.0. Systematic biology, 59(3), 307-321.
+
+BEAST: Drummond, A. J., Suchard, M. A., Xie, D., & Rambaut, A. (2012). Bayesian Phylogenetics with BEAUti and the BEAST 1.7. Molecular Biology and Evolution, 29(8), 1969–1973. doi:10.1093/molbev/mss075
+
+Prokka: Prokaryotic Genome Annotation System - http://vicbioinformatics.com/ 
+
+Snippy: Rapid haploid variant calling and core SNP phylogeny - http://vicbioinformatics.com/ 
+
+VELVET: Zerbino, D. R., & Birney, E. (2008). Velvet: algorithms for de novo short read assembly using de Bruijn graphs. Genome research, 18(5), 821-829.
+
+NHMMER: Wheeler, Travis J., and Sean R. Eddy. "nhmmer: DNA homology search with profile HMMs." Bioinformatics (2013): btt403.
+
+MUSCLE: Edgar, R. C. (2004). MUSCLE: multiple sequence alignment with high accuracy and high throughput. Nucleic acids research, 32(5), 1792-1797.
+
+For the genomes that serve as BLAST and HMMER datasets:
+
+>ENA|CP003386|CP003386.1 Salmonella enterica subsp. enterica serovar Typhimurium str. 798, complete genome.
+Characterization and differential gene expression between two phenotypic phase variants in Salmonella enterica serovar Typhimurium.
+Patterson SK., Borewicz K., Johnson T., Xu W., Isaacson RE.
+Department of Pathobiology, University of Illinois, Urbana, Illinois, United States of America.
+PLoS ONE 7(8): e43592 (2012 )
+
+>ENA|CP001363|CP001363.1 Salmonella enterica subsp. enterica serovar Typhimurium str. 14028S, complete genome.
+Short-term signatures of evolutionary change in the Salmonella enterica serovar typhimurium 14028 genome.
+Jarvik T., Smillie C., Groisman EA., Ochman H.
+Department of Chemistry and Biochemistry, University of Arizona, Tucson, AZ 85718, USA.
+J. Bacteriol. 192(2): 560-567 (2010 Jan)
+
+>ENA|CP007523|CP007523.1 Salmonella enterica subsp. enterica serovar Typhimurium str. CDC 2011K-0870, complete
+Annotation of the Salmonella enterica subspecies enterica USDA-ARS-USMARC-1909 complete genome
+Harhay D.M., Smith T.P.L., Bono J., Wang R., Bosilevac J.M., Fields P.I., Harhay G.P.
+
+>ENA|FN424405|FN424405.1 Salmonella enterica subsp. enterica serovar Typhimurium str. D23580 complete genome
+Epidemic multiple drug resistant Salmonella Typhimurium causing invasive disease in sub-Saharan Africa have a distinct genotype.
+Kingsley RA., Msefula CL., Thomson NR., Kariuki S., Holt KE., Gordon MA., Harris D., Clarke L., Whitehead S., Sangal V., Marsh K., Achtman M., Molyneux ME., Cormican M., Parkhill J., MacLennan CA., Heyderman RS., Dougan G.
+The Wellcome Trust Sanger Institute, The Wellcome Trust Genome Campus, Cambridge, United Kingdom. rak@sanger.ac.uk
+Genome Res. 19(12): 2279-2287 (2009 Dec)
+
+>ENA|HG326213|HG326213.1 Salmonella enterica subsp. enterica serovar Typhimurium str. DT2, complete genome
+Genome and transcriptome adaptation accompanying emergence of the DT2 host-adapted Salmonella Typhimurium pathovar
+Kingsley R.A., Whitehead S., Connor T., Barquist L., Sait L., Holt K.E., Sivaraman K., Wileman T., Goulding D., Clare S., Hale C., Seshasayee A., Harris S., Thomson N.R., Gardner P., Rabsch W., Wigley P., Humphrey T., Parkhill J., Dougan G.
+
+>ENA|HF937208|HF937208.1 Salmonella enterica subsp. enterica serovar Typhimurium DT104 main chromosome, complete
+Distinguishable epidemics of multidrug-resistant Salmonella Typhimurium DT104 in different hosts.
+Mather AE., Reid SW., Maskell DJ., Parkhill J., Fookes MC., Harris SR., Brown DJ., Coia JE., Mulvey MR., Gilmour MW., Petrovska L., de Pinna E., Kuroda M., Akiba M., Izumiya H., Connor TR., Suchard MA., Lemey P., Mellor DJ., Haydon DT., Thomson NR.
+Wellcome Trust Sanger Institute, Wellcome Trust Genome Campus, Hinxton CB10 1SA, UK.
+Science 341(6153): 1514-1517 (2013 Sep)
+
+>ENA|AP014565|AP014565.1 Salmonella enterica subsp. enterica serovar Typhimurium str. L-3553 DNA, complete
+complete genome sequence of Salmonella enterica subsp. enterica serovar Typhimurium str. L-3553
+Sekizuka T., Kuroda M., Uchida I., Tanaka K., Tamamura Y., Lee K., Kusumoto M., Iwata T., Akiba M.
+
+>ENA|CP002487|CP002487.1 Salmonella enterica subsp. enterica serovar Typhimurium str. ST4/74, complete genome.
+Genome sequences of Salmonella enterica serovar typhimurium, Choleraesuis, Dublin, and Gallinarum strains of well- defined virulence in food-producing animals.
+Richardson EJ., Limaye B., Inamdar H., Datta A., Manjari KS., Pullinger GD., Thomson NR., Joshi RR., Watson M., Stevens MP.
+The Roslin Institute and Royal (Dick) School of Veterinary Studies, University of Edinburgh, Easter Bush, Midlothian, EH25 9RG, Scotland, UK.
+J. Bacteriol. 193(12): 3162-3163 (2011 Jun)
+
+>ENA|AE006468|AE006468.1 Salmonella enterica subsp. enterica serovar Typhimurium str. LT2, complete genome.
+Complete genome sequence of Salmonella enterica serovar Typhimurium LT2.
+McClelland M., Sanderson KE., Spieth J., Clifton SW., Latreille P., Courtney L., Porwollik S., Ali J., Dante M., Du F., Hou S., Layman D., Leonard S., Nguyen C., Scott K., Holmes A., Grewal N., Mulvaney E., Ryan E., Sun H., Florea L., Miller W., Stoneking T., Nhan M., Waterston R., Wilson RK.
+Sidney Kimmel Cancer Center, 10835 Altman Row, San Diego, California 92121, USA. mmcclelland@skcc.org
+Nature 413(6858): 852-856 (2001 Oct)

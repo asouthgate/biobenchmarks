@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+rm -f res/reads1_11893_2_64_1.fasta
+rm -f  res/reads2_11893_2_64_2.fasta
+rm -f ../output/command_times.out ../output/*.csv ../output/*log
+rm -f ../output/graphs/* 
+rm -r -f temp/*
+rm primates.log primates.trees

@@ -1,0 +1,16 @@
+gunzip -f -k res/reads1_11893_2_64_1.fasta.gz; gunzip -f -k res/reads2_11893_2_64_2.fasta.gz
+velveth temp/Assem 31 -shortPaired -fastq -separate res/reads1_11893_2_64_1.fasta res/reads2_11893_2_64_2.fasta > ../output/velveth.log 2>&1
+velvetg temp/Assem -clean yes -exp_cov 78 -cov_cutoff 15.865940271721 > ../output/velvetg.log 2>&1
+snippy --force --outdir temp/snippyout --ref res/Salmonella_enterica_sv_Typhimurium_SL1344.fasta --pe1 res/reads1_11893_2_64_1.fasta --pe2 res/reads2_11893_2_64_2.fasta > ../output/snippy.log 2>&1
+#rm res/reads1_11893_2_64_1.fasta res/reads2_11893_2_64_2.fasta
+#rm -r temp/snippyout
+prokka --outdir temp/prokka_out --locustag J --centre J --evalue 0.001 --force temp/Assem/contigs.fa > ../output/prokka.log 2>&1
+#rm -r temp/prokka_out
+#makeblastdb -in res/salmonella_genomes.fasta -input_type fasta  -dbtype nucl -max_file_sz 1000000000 -out temp/blastdb > ../output/makeblastdb.log 2>&1
+blastn -query res/mixed_salmonella_annotations.ffn -db temp/blastdb -out temp/blast_output.txt > ../output/tblastn.log 2>&1
+#rm -r temp/blast_output.txt temp/blastdb*
+muscle -in res/16S_sequences.fasta -out temp/muscle_out.aln -quiet > ../output/muscle.log 2>&1
+nhmmer -o temp/hmmerout.out temp/muscle_out.aln res/salmonella_genomes.fasta > ../output/nhmmer.log 2>&1
+#rm temp/hmmerout.out
+phyml -i res/muscle_out_p.phylip -b 5 -m GTR -a e > ../output/phyml.log 2>&1
+beast -beagle_off -overwrite res/primates.xml > ../output/beast.log 2>&1
