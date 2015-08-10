@@ -20,9 +20,10 @@ commands: \n\
         graph_scores - graphs scores to output/graphs \n\
         devWipe      - wipes all collected data, scores, and temp files"
 
-from benchmarker.benchmarker_grapher import graph_CS
-from benchmarker.benchmarker_parse_and_graph import parse_and_graph
 from benchmarker.benchmarker_timer import time_commands
+import benchmarker.benchmarker_parser as parser
+import benchmarker.benchmarker_write_csv as csv_writer
+import benchmarker.benchmarker_scorer as scorer
 
 import sys
 import os
@@ -37,12 +38,11 @@ def main():
         if len(sys.argv) == 1:
                 print(usage)
                 return 1
-        if sys.argv[1] == "graph_data":
-                parse_and_graph("graph_data")
-        elif sys.argv[1] == "graph_scores":
-                parse_and_graph("graph_scores")
-        elif sys.argv[1] == "output":
-                parse_and_graph("output")
+        if sys.argv[1] == "output":
+                #Get a list of CommandStat objects by parsing command_times.out
+                CSs = parser.parse_time_output(current_dir+"/../output/command_times.out")
+                csv_writer.write_csv(CSs, "outfile.csv")
+                scorer.get_scores(current_dir+"/../output/outfile.csv")
                 subprocess.call("cat ../output/scores.csv ../output/outfile.csv > ../output/combined_output.csv",
                                 shell=True, cwd=current_dir)
                 print("see output/scores.csv for scores")
