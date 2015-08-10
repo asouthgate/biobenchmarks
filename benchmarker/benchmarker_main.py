@@ -65,6 +65,7 @@ def main():
                 if number_of_runs > 0:
                         countf = open(current_dir+"/counter.txt", "w")
                         countf.write(str(number_of_runs-1))
+                        countf.close()
                         print("Rebooting...")
                         subprocess.call("sudo reboot".split())
                 else:
