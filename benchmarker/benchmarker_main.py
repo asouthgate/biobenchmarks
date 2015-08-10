@@ -6,9 +6,8 @@
         If counter.txt contains a number, run that many times,
         rebooting in between runs.
         Warning!: Reboot intended for possible VM use only.
-   graph: calls benchmarker_parse_and_graph.parse_and_graph;
-          generates graphs in output/graphs/<graph>.
-   write_csv: calls benchmarker_parse_and_graph.parse_and_graph,
+   output: calls benchmarker_parser, benchmarker_write_csv,
+          benchmarker_scorer.
           writes csv to output/outfile.csv
    devWipe: calls cleanup.bsh; wipes all temp and output"""
 
@@ -16,8 +15,6 @@ usage = "Usage: benchmarker-runner.py [command] \n\
 commands: \n\
         run n        - runs benchmarks, where optional n specifies the number of runs to perform, with n-1 restarts in between \n\
         output       - outputs data to output/ \n\
-        graph_data   - graphs raw data to output/graphs \n\
-        graph_scores - graphs scores to output/graphs \n\
         devWipe      - wipes all collected data, scores, and temp files"
 
 from benchmarker.benchmarker_timer import time_commands
