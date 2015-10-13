@@ -1,0 +1,8 @@
+sudo dmidecode > ../output/sysinfo/dmidecode.sysinfo 2>> ../output/sysinfo/sysinfo_combinederr
+sudo less /proc/cpuinfo > ../output/sysinfo/cpuinfo.sysinfo 2>> ../output/sysinfo/sysinfo_combinederr
+sudo less /proc/meminfo > ../output/sysinfo/meminfo.sysinfo 2>> ../output/sysinfo/sysinfo_combinederr
+sudo lspci > ../output/sysinfo/lspci.sysinfo 2>> ../output/sysinfo/sysinfo_combinederr
+sudo uname > ../output/sysinfo/name.sysinfo 2>> ../output/sysinfo/sysinfo_combinederr
+sudo less /etc/*-release > ../output/sysinfo/release.sysinfo 2>> ../output/sysinfo/sysinfo_combinederr
+sudo cat ../output/sysinfo/* > ../output/sysinfo/sysinfo_combined.sysinfo
+tar -zcvf ../output/sysinfos.tar.gz ../output/sysinfo

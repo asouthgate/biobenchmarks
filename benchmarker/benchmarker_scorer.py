@@ -16,22 +16,22 @@ def csv_parser(fname):
     f = open(fname)
     for line in f:
         fields = line.split(",")
-        #to be compatible with old outfile.csv format
+        #to be compatible with old outfile.csv
         #get only those up to an empty field (any further will be new stats such as stdev)
         for i in range(len(fields)):
-            #e.g. Elapsed Time,1,2,3,4,5,6,7,,,,avg,std,etc. So once we hit ,,,, drop everything after
             if fields[i] == '':
                 fields = fields[:i]
                 break
-        if fields[0].strip() in commands:
-            command_name = fields[0].strip()
+        comm = fields[0].strip().split("/")[-1]
+        if comm in commands:
+            command_name = comm
         if fields[0].startswith("Elapsed"):
             avg = sum([float(i) for i in fields[1:]])/len(fields[1:])
             average_times[command_name] = avg
     return average_times
 
 def get_score_dict(average_times, reference_times):
-    """Take two dicts, return new dict of quotient of vals for each key (keys in both are identical)"""
+    """Take two dicts, return new dict of quotient of vals for each key"""
     return {i:reference_times[i]/q for i,q in average_times.items()}
 
 def get_scores(fname):
@@ -44,7 +44,7 @@ def get_scores(fname):
     for i,q in sorted(final_scores.items()):
         outf.write(i + "," + str(q)[:8]+"\n")
     score_vals = [val for i,val in final_scores.items()]
-    outf.write("geometric mean," + str(reduce(lambda x, y: x * y, score_vals, 1)**(1/len(score_vals)))[:8] + "\n")
+    outf.write("geometric mean," + str(reduce(lambda x, y: x * y, score_vals, 1)**(1/len(score_vals)))[:8] + "\n\n\n\n\n")
     outf.write("\n")
     outf.close()
     return 0

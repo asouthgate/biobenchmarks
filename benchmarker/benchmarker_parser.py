@@ -43,6 +43,7 @@ def parse_time_output(fname):
     #temp list to hold returned CommandStat objects
     l = []
     for i in s:
+        print(i)
         #"sh -c name" is the first element if split by newline
         name = i.split("\n")[0].split()[2]
         #templist that will be the CommandStat's list of Stats

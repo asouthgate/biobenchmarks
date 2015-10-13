@@ -1,12 +1,16 @@
-beast,0.845825
-blastn,0.497365
-gunzip,0.054116
-muscle,1.330236
-nhmmer,0.621253
-phyml,1.401768
-prokka,0.112731
-snippy,0.727940
-velvetg,1.191412
-velveth,1.062123
-geometric mean,0.554311
+beast,1.829589
+blastn,2.538507
+gunzip,2.297874
+muscle,1.994812
+nhmmer,1.282243
+phyml,2.226273
+prokka,1.089221
+snippy,1.878041
+velvetg,1.536103
+velveth,1.644861
+geometric mean,1.777084
+
+
+
+
 

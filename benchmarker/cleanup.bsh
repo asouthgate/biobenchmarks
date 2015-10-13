@@ -6,3 +6,5 @@ rm -f ../output/command_times.out ../output/*.csv ../output/*log
 rm -f ../output/graphs/* 
 rm -r -f temp/*
 rm primates.log primates.trees
+rm -r ../output/sysinfo/*
+rm ../output/sysinfo_combined.sysinfo

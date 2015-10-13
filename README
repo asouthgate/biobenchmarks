@@ -10,6 +10,8 @@ Usage: benchmarker-runner.py [command]
 commands:
         run n        - runs benchmarks, where optional n specifies the number of runs to perform, with n-1 restarts in between
         output       - outputs data to output/
+        graph_data   - graphs raw data to output/graphs
+        graph_scores - graphs scores to output/graphs
         devWipe      - wipes all collected data, scores, and temp files"
 
 RESOURCES USED:

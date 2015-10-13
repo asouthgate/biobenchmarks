@@ -6,8 +6,9 @@
         If counter.txt contains a number, run that many times,
         rebooting in between runs.
         Warning!: Reboot intended for possible VM use only.
-   output: calls benchmarker_parser, benchmarker_write_csv,
-          benchmarker_scorer.
+   graph: calls benchmarker_parse_and_graph.parse_and_graph;
+          generates graphs in output/graphs/<graph>.
+   write_csv: calls benchmarker_parse_and_graph.parse_and_graph,
           writes csv to output/outfile.csv
    devWipe: calls cleanup.bsh; wipes all temp and output"""
 
@@ -15,12 +16,14 @@ usage = "Usage: benchmarker-runner.py [command] \n\
 commands: \n\
         run n        - runs benchmarks, where optional n specifies the number of runs to perform, with n-1 restarts in between \n\
         output       - outputs data to output/ \n\
+        sysinfo      - retrieves sysinfo, outputs to /output/sysinfo/ and /output/combined_sysinfo \n\
+        graph_data   - graphs raw data to output/graphs \n\
+        graph_scores - graphs scores to output/graphs \n\
         devWipe      - wipes all collected data, scores, and temp files"
 
+from benchmarker.benchmarker_grapher import graph_CS
+from benchmarker.benchmarker_parse_and_graph import parse_and_graph
 from benchmarker.benchmarker_timer import time_commands
-import benchmarker.benchmarker_parser as parser
-import benchmarker.benchmarker_write_csv as csv_writer
-import benchmarker.benchmarker_scorer as scorer
 
 import sys
 import os
@@ -29,17 +32,22 @@ import subprocess
 __version__ = "0.1.0"
 
 def main():
-        """Takes four command-line arguments: run, output, graph, devwipe"""
+        """Takes four command-line arguments: run, output, sysinfo, graph, devwipe"""
         current_dir = os.path.join(os.path.dirname(__file__))
         #If called with no arguments, print usage
         if len(sys.argv) == 1:
                 print(usage)
                 return 1
-        if sys.argv[1] == "output":
-                #Get a list of CommandStat objects by parsing command_times.out
-                CSs = parser.parse_time_output(current_dir+"/../output/command_times.out")
-                csv_writer.write_csv(CSs, "outfile.csv")
-                scorer.get_scores(current_dir+"/../output/outfile.csv")
+        if sys.argv[1] == "graph_data":
+                parse_and_graph("graph_data")
+        elif sys.argv[1] == "graph_scores":
+                parse_and_graph("graph_scores")
+        elif sys.argv[1] == "sysinfo":
+                subprocess.call("./sysinfo_commands",shell=True,
+                                cwd=current_dir);
+                print("see output/sysinfo/ for individual sysinfos, outout/combined_sysinfo for combined");
+        elif sys.argv[1] == "output":
+                parse_and_graph("output")
                 subprocess.call("cat ../output/scores.csv ../output/outfile.csv > ../output/combined_output.csv",
                                 shell=True, cwd=current_dir)
                 print("see output/scores.csv for scores")

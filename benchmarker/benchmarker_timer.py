@@ -10,7 +10,7 @@ def time_commands(filename, curwd):
            with /usr/bin/time for each command in the file"""
         for command in open(curwd+"/"+filename):
                 if command.startswith("#"):
-                         #in this case, we don't want to time it, just run it
+                         #in this case, we don't want to time it
                          print("not timing: ", command[1:])
                          subprocess.call(command[1:].strip(), shell=True, cwd=curwd)
                 else:
