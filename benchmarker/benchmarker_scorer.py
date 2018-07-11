@@ -28,6 +28,7 @@ def csv_parser(fname):
         if fields[0].startswith("Elapsed"):
             avg = sum([float(i) for i in fields[1:]])/len(fields[1:])
             average_times[command_name] = avg
+    f.close()
     return average_times
 
 def get_score_dict(average_times, reference_times):
