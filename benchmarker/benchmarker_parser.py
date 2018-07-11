@@ -39,7 +39,8 @@ class Stat(object):
 def parse_time_output(fname):
     """Take a file name to parse, return list of CommandStat objects."""
     #split by "Command being timed:"
-    s = open(fname).read().split("Command being timed: ")[1:]
+    with open(fname) as f:
+        s = f.read().split("Command being timed: ")[1:]
     #temp list to hold returned CommandStat objects
     l = []
     for i in s:
