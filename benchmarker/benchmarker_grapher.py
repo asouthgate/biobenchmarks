@@ -53,7 +53,8 @@ def graph_CS(CS):
 
 def graph_scores():
     """Graph final scores"""
-    scores = open(current_dir + "/../output/scores.csv").read().split("\n")[:-1]
+    with open(current_dir + "/../output/scores.csv") as f:
+        scores = f.read().split("\n")[:-1]
     title = "Benchmarking scores as relative speedup to reference times"
     yvals = [float(i.split(",")[1]) for i in scores]
     xvals = [i.split(",")[0] for i in scores]
