@@ -65,7 +65,8 @@ def main():
                         f.write(str(n_restarts))
                         f.close()
                 time_commands("commands.txt", current_dir)
-                number_of_runs = int(open(current_dir+"/counter.txt").read())
+                with open(current_dir+"/counter.txt") as f:
+                        number_of_runs = int(f.read())
                 #If this number is > 0, perform a reboot
                 if number_of_runs > 0:
                         countf = open(current_dir+"/counter.txt", "w")
